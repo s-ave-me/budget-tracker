@@ -1,0 +1,527 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ==========================
+   Base - Ultra Dark Theme
+   ========================== */
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+    background-attachment: fixed;
+    color: #b0b0b0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 15px 10px 10px;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(45deg, #ffffff, #cccccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+h2 {
+    margin: 15px 10px 8px;
+    color: #d0d0d0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* ==========================
+   Form Container - Glass Effect - RESPONSIVE
+   ========================== */
+#transactionForm {
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(40, 40, 40, 0.8);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 
+        0 6px 24px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 95%;
+    max-width: 420px;
+    margin: 0 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#transactionForm:hover {
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Input & Select fields - Responsive */
+#transactionForm input,
+#transactionForm select {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    color: #e0e0e0;
+    border: 1px solid rgba(60, 60, 60, 0.6);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    min-width: 80px;
+    flex: 1;
+    transition: all 0.3s ease;
+    box-shadow: 
+        inset 2px 2px 4px rgba(0, 0, 0, 0.8),
+        inset -2px -2px 4px rgba(40, 40, 40, 0.3);
+}
+
+/* Dropdown options styling - Keep it dark! */
+#transactionForm select option {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+}
+
+#transactionForm input:focus,
+#transactionForm select:focus {
+    outline: none;
+    background: linear-gradient(145deg, #252525, #1a1a1a);
+    border-color: rgba(100, 100, 100, 0.8);
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.1),
+        inset 2px 2px 5px rgba(0, 0, 0, 0.8),
+        inset -2px -2px 5px rgba(60, 60, 60, 0.3);
+    color: #ffffff;
+}
+
+#transactionForm input::placeholder {
+    color: #666666;
+}
+
+/* Submit Button - Responsive Design */
+#transactionForm button[type="submit"] {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid rgba(80, 80, 80, 0.6);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    box-shadow: 
+        2px 2px 6px rgba(0, 0, 0, 0.8),
+        -2px -2px 6px rgba(60, 60, 60, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#transactionForm button[type="submit"]:hover {
+    background: linear-gradient(145deg, #353535, #252525);
+    transform: translateY(-1px);
+    box-shadow: 
+        3px 3px 8px rgba(0, 0, 0, 0.9),
+        -3px -3px 8px rgba(80, 80, 80, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+#transactionForm button[type="submit"]:active {
+    transform: translateY(0px);
+    box-shadow: 
+        inset 2px 2px 6px rgba(0, 0, 0, 0.8),
+        inset -1px -1px 2px rgba(60, 60, 60, 0.3);
+}
+
+/* Error messages */
+.error-message {
+    color: #ff6666;
+    font-size: 0.8rem;
+    width: 100%;
+    text-shadow: 0 0 5px rgba(255, 102, 102, 0.3);
+}
+
+/* ==========================
+   Balance Display - Responsive
+   ========================== */
+#balanceDisplay {
+    font-size: 1.4rem;
+    margin: 15px 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    padding: 12px 15px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba(60, 60, 60, 0.5);
+    backdrop-filter: blur(5px);
+    width: 95%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.flash-green {
+    color: #00ff88 !important;
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.6) !important;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+.flash-red {
+    color: #ff4444 !important;
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.6) !important;
+    box-shadow: 0 0 30px rgba(255, 68, 68, 0.2);
+}
+
+/* ==========================
+   Transaction List - Responsive Cards
+   ========================== */
+#transactionList {
+    width: 95%;
+    max-width: 420px;
+    list-style: none;
+    padding: 0;
+    margin: 0 10px;
+}
+
+#transactionList li {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    padding: 18px 24px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(40, 40, 40, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 
+        4px 4px 12px rgba(0, 0, 0, 0.8),
+        -2px -2px 8px rgba(40, 40, 40, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+
+/* Make the transaction text take up available space */
+#transactionList li span {
+    flex: 1;
+    word-break: break-word;
+}
+
+#transactionList li:hover:not(.deleting):not(.slide-deleting) {
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(145deg, #252525, #1a1a1a);
+    border-color: rgba(60, 60, 60, 0.8);
+    box-shadow: 
+        6px 6px 20px rgba(0, 0, 0, 0.9),
+        -3px -3px 12px rgba(60, 60, 60, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.05),
+        0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.description {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.expense {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Income / Expense color classes with glow */
+.income {
+    color: #00ff88;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
+.expense-red {
+    color: #ff4444;
+    text-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+}
+
+/* Buttons inside transactions - Responsive */
+#transactionList button {
+    margin: 0 0 0 6px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+button.delete-btn {
+    background: linear-gradient(145deg, #ff4444, #cc3333);
+    color: #ffffff;
+    box-shadow: 
+        2px 2px 6px rgba(0, 0, 0, 0.6),
+        -1px -1px 3px rgba(255, 68, 68, 0.2);
+}
+
+button.delete-btn:hover {
+    background: linear-gradient(145deg, #ff5555, #dd4444);
+    transform: translateY(-1px);
+    box-shadow: 
+        3px 3px 8px rgba(0, 0, 0, 0.7),
+        -2px -2px 4px rgba(255, 68, 68, 0.3);
+}
+
+button.edit-btn {
+    background: linear-gradient(145deg, #4488ff, #3366cc);
+    color: #ffffff;
+    box-shadow: 
+        2px 2px 6px rgba(0, 0, 0, 0.6),
+        -1px -1px 3px rgba(68, 136, 255, 0.2);
+}
+
+button.edit-btn:hover {
+    background: linear-gradient(145deg, #5599ff, #4477dd);
+    transform: translateY(-1px);
+    box-shadow: 
+        3px 3px 8px rgba(0, 0, 0, 0.7),
+        -2px -2px 4px rgba(68, 136, 255, 0.3);
+}
+
+/* ==========================
+   Animations - Enhanced Dark Theme + Add/Delete (FIXED)
+   ========================== */
+
+/* New transaction slide-in animation */
+@keyframes slideInFromRight {
+    0% { 
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Smooth fade and shrink animation for deletion */
+@keyframes fadeOutShrink {
+    0% { 
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        max-height: 100px;
+        margin-bottom: 15px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    30% {
+        transform: translateX(-20px) scale(0.98);
+        opacity: 0.7;
+    }
+    70% {
+        transform: translateX(-50px) scale(0.9);
+        opacity: 0.3;
+        max-height: 80px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    100% { 
+        transform: translateX(-100%) scale(0.8);
+        opacity: 0;
+        max-height: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-width: 0;
+    }
+}
+
+/* Alternative: Simple slide out (if you prefer this approach) */
+@keyframes slideOutToLeft {
+    0% { 
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateX(-100%) scale(0.95);
+        opacity: 0;
+    }
+}
+
+/* Animation class for items being deleted - SMOOTH VERSION */
+#transactionList li.deleting {
+    animation: fadeOutShrink 0.6s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Alternative: If you prefer simple slide out */
+#transactionList li.slide-deleting {
+    animation: slideOutToLeft 0.4s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Balance update animation */
+@keyframes balancePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#balanceDisplay.updating {
+    animation: balancePulse 0.3s ease;
+}
+
+#transactionList li.editing-item {
+    animation: pulse 0.3s ease;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.1),
+        4px 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.98); }
+    50% { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 255, 255, 0.15); }
+    100% { transform: scale(1); }
+}
+
+form#transactionForm.editing input,
+form#transactionForm.editing select,
+form#transactionForm.editing button[type="submit"] {
+    animation: fadeIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Button press animations */
+#transactionList button:active {
+    transform: scale(0.95);
+}
+
+/* Form submission animation */
+@keyframes formSubmit {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+#transactionForm.submitting {
+    animation: formSubmit 0.2s ease;
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+}
+
+/* ==========================
+   Mobile Responsive Design
+   ========================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0 5px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+        margin: 10px 5px 8px;
+    }
+    
+    h2 {
+        font-size: 1rem;
+        margin: 10px 5px 6px;
+    }
+    
+    #transactionForm {
+        width: 98%;
+        padding: 12px 15px;
+        gap: 8px;
+        margin: 0 5px;
+    }
+    
+    #transactionForm input,
+    #transactionForm select {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+        min-width: 70px;
+    }
+    
+    #transactionForm button[type="submit"] {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+    
+    #balanceDisplay {
+        font-size: 1.2rem;
+        padding: 10px 12px;
+        margin: 10px 5px;
+        width: 98%;
+    }
+    
+    #transactionList {
+        width: 98%;
+        margin: 0 5px;
+    }
+    
+    #transactionList li {
+        padding: 10px 12px;
+        gap: 8px;
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    #transactionList button {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+        margin: 0 0 0 4px;
+    }
+    
+    .description,
+    .expense {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #transactionForm {
+        flex-direction: column;
+    }
+    
+    #transactionForm input,
+    #transactionForm select,
+    #transactionForm button[type="submit"] {
+        width: 100%;
+        min-width: auto;
+    }
+}
